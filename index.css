@@ -1,0 +1,30 @@
+.show-meta {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.expandable > header {
+  width: ;
+}
+
+.expandable > div {
+  height: 0;
+  animation-name: hideHeight;
+  animation-duration: 0.5s;
+}
+
+.expandable > div.show {
+  animation-name: showHeight;
+  animation-duration: 0.5s;
+}
+
+@keyframes showHeight {
+  from { height: 0 }
+  to { height: auto };
+}
+
+@keyframes hideHeight {
+  from { height: auto; }
+  to { height: 0; }
+}

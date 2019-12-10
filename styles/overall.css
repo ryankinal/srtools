@@ -1,0 +1,394 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(0,35,58);
+  color: #FFF;
+  font-family: Roboto;
+}
+
+h1 {
+  font-family: Metal Mania, serif;
+}
+
+h2, h3, h4 {
+  font-family: Wallpoet;
+  margin: 0;
+  padding: 0;
+}
+
+input[type=text] {
+  border-radius: 6px;
+  padding: 5px;
+  border: none;
+  font-size: inherit;
+}
+
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.cap-popup {
+  background-color: rgb(13,67,104);
+  width: 100%;
+  padding: 20px 40px;
+  box-shadow: 0 0 30px 0px rgb(255,170,0, 0.3)
+}
+
+.cap-message {
+  text-align: center;
+}
+
+.cap-buttons {
+  text-align: center;
+}
+
+.page-header {
+  padding: 5px 8px;
+  text-align: right;
+  background-color: rgb(0,35,58);
+  border-bottom: solid 2px rgb(0,170,255);
+  margin: -8px -8px 20px;
+}
+
+.selected {
+  background-color: rgba(149,165,175, 0.6);
+}
+
+.selected-check {
+  display: none;
+}
+
+.selected .selected-check {
+  display: initial;
+}
+
+.show-meta {
+  position: fixed;
+  top: 6px;
+  left: 12px;
+  font-size: 18px;
+}
+
+.meta-close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 22px;
+  height: 22px;
+  border-radius: 11px;
+  font-size: 12px;
+  background-color: rgb(255,0,170);
+  color: #FFF;
+}
+
+.meta-close span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.meta {
+  background-color: rgb(48,107,146);
+  position: fixed;
+  overflow: auto;
+  width: 90%;
+  height: 90%;
+  margin-top: 5%;
+  left: 0;
+  top: 0;
+  border-radius: 0 12px 12px 0;
+  padding: 0;
+  z-index: 100;
+  border: solid 1px rgb(170,255,0);
+  border-left-width: 0;
+}
+
+.meta.show {
+  animation-name: showMeta;
+  animation-duration: 1s;
+  display: block !important;
+  transform: translateX(0);
+}
+
+.meta.hide {
+  animation-name: hideMeta;
+  animation-duration: 1s;
+  display: block !important;
+  transform: translateX(-100%);
+}
+
+.meta ul {
+  padding: 0;
+  margin: 0;
+}
+
+.meta li {
+  border: solid rgb(170,255,0) 1px;
+  border-width: 1px 0 0 0;
+  margin-top: -1px;
+}
+
+.meta li li {
+  border-left-width: 25px;
+  font-family: Roboto;
+  text-transform: lowercase;
+}
+
+.meta nav > ul > li:last-child {
+  border-bottom-width: 1px;
+}
+
+.meta nav > ul > li {
+  font-family: Wallpoet;
+}
+
+.meta li span,
+.meta li a {
+  display: block;
+  padding: 15px 20px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.stuff-list {
+  margin-bottom: 20px;
+}
+
+.stuff-list .kind-of-stuff {
+  float: left;
+}
+
+.stuff-list .controls {
+  float: right;
+}
+
+.show {
+  display: block !important;
+}
+
+.hide {
+  display: none !important;
+}
+
+.modal {
+  position: fixed;
+  top: 5%;
+  left: 5%;
+  width: 90%;
+  max-height: 90%;
+  overflow: auto;
+  padding: 10px;
+  border-radius: 12px;
+  background-color: rgb(48,107,146);
+  z-index: 102;
+}
+
+.modal-blanket {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.8);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+
+.character-minimal {
+  padding: 10px 10px;
+  border: solid 1px rgba(149,165,175, 0.6);
+  margin-bottom: 3px;
+}
+
+.character-minimal > * {
+  display: inline-block;
+}
+
+.character-minimal .selected-check span {
+  color: rgb(08,139,160);
+}
+
+.character-minimal.selected .selected-check span {
+  color: rgb(170,255,0);
+}
+
+button {
+  border: none;
+  background-color: rgb(0,170,255);
+  padding: 5px 10px;
+  border-radius: 6px;
+  outline: none;
+  font-size: 16px;
+}
+
+button.icon-button {
+  background-color: transparent;
+  color: #FFF;
+  padding: 0;
+  border-radius: 0;
+}
+
+.modal.with-sticky-footer {
+  padding-bottom: 50px;
+}
+
+.sticky-modal-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: inherit;
+  padding-left: 10px;
+  padding: 12px;
+}
+
+.card {
+  border-radius: 12px;
+  padding: 15px;
+  background-color: rgb(0,170,255);
+  opacity: 0.8;
+  transition-property: transform;
+  transform: scale(0.95);
+  transition-duration: 0.5s;
+}
+
+.card.passed {
+  opacity: 0.6;
+}
+
+.card.current {
+  background-color: rgb(0,170,255);
+  box-shadow: 0 0 10px #000;
+  opacity: 1.0;
+  transform: scale(1);
+}
+
+.card.dead {
+  opacity: 0.4;
+}
+
+.character-combat {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.character-combat .participant-name {
+  text-align: center;
+  font-size: 22px;
+  flex-grow: 25;
+  padding: 0 15px;
+}
+
+.character-combat .participant-name button {
+  margin-top: 10px;
+}
+
+.character-combat .acting {
+  font-size: 12px;
+}
+
+.character-combat [next] {
+  background-color: rgb(170,0,255);
+  color: #FFF;
+}
+
+.character-combat .participant-initiative {
+  float: left;
+  font-size: 8px;
+  text-align: center;
+}
+
+.character-combat .initiative-value {
+  font-size: 22px;
+}
+
+.character-minimal .controls {
+  align-self: right;
+}
+
+.controls > * {
+  margin: 0 4px;
+}
+
+.character-minimal input {
+  font-size: 16px;
+  width: 30px;
+  text-align: center;
+  border-radius: 3px;
+  border: none;
+}
+
+.combat-progress {
+  font-family: Wallpoet;
+  font-size: 18px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.combat-progress div {
+  flex-grow: 3;
+  text-align: center;
+}
+
+form > div,
+.form > div{
+  padding: 0 20px;
+}
+
+section > div {
+  padding: 0 20px;
+}
+
+section > header {
+  padding: 10px 20px;
+  border-bottom: solid 1px rgb(255,170,0);
+  margin-bottom: 12px;
+}
+
+.search-filter {
+  position: relative;
+}
+
+.search-filter input {
+  padding-left: 35px;
+}
+
+.search-filter .filter-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+}
+
+.character-attributes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.character-attribute {
+  width: 25%;
+  padding: 5px 5px 5px 0;
+}
+
+.character-attributes label {
+  font-size: 12px;
+  display: block;
+}
+
+.character-attributes input {
+  display: block;
+  width: 100%;
+}

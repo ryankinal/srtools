@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Ryan's Shadowrun Tools</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="styles/fontawesome/fontawesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Metal+Mania|Roboto|Wallpoet&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles/cap.css">
+    <link rel="stylesheet" type="text/css" href="styles/overall.css">
+    <link rel="stylesheet" type="text/css" href="styles/combat.css">
+  </head>
+  <body hide="#showMeta">
+    <div class="meta hide">
+      <div class="meta-close" hide=".meta" show="#showMeta"><span class="fas fa-angle-double-left"></span></div>
+      <h1>Shadowrun Tools</h1>
+      <nav>
+        <ul>
+          <li>
+            <span>Characters</span>
+            <ul>
+              <li><a href="/characters" hide=".meta" show="#showMeta" location="/characters">Runners</a></li>
+              <li><a href="/grunts" hide=".meta" show="#showMeta" location="npcs">Grunts</a></li>
+            </ul>
+          </li>
+          <li><a href="/combat" hide=".meta" show="#showMeta" location="/combat">Combat</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div id="showMeta" class="show-meta" show=".meta" hide="#showMeta"><span class="fa fa-bars"></span></div>
+    <div class="content" output></div>
+    <div class="modal-blanket hide"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.1.0/mustache.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js"></script>
+    <script src="polyfill.js"></script>
+    <script type="module" src="app/app.js"></script>
+  </body>
+</html>

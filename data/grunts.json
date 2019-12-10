@@ -1,0 +1,107 @@
+[
+  {
+    "id": "grunt-r0",
+    "name": "Thug (R0)",
+    "attributes": {
+      "body": 3,
+      "agility": 3,
+      "reaction": 3,
+      "strength": 3,
+      "willpower": 3,
+      "logic": 2,
+      "intuition": 3,
+      "charisma": 2,
+      "essence": 6,
+      "movement": 6
+    },
+    "skills": {
+      "active": {
+        "blades": { "rating": 3, "attribute": "agility" },
+        "clubs": { "rating": 3, "attribute": "agility" },
+        "intimidation": { "rating": 3, "attribute": "agility" },
+        "unarmed combat": { "rating": 3, "attribute": "agility" }
+      }
+    },
+    "gear": {
+      "weapons": {
+        "club": { "skill": "clubs", "accuracy": 4, "reach": 1, "damage": 6, "damageType": "P", "armorPiercing": 0 },
+        "knife": { "skill": "blades", "accuracy": 5, "reach": 0, "damage": 4, "damageType": "P", "armorPiercing": -1 }
+      },
+      "matrix": {
+        "meta link commlink": { "rating": 1 }
+      }
+    }
+  }, {
+    "id": "grunt-lieutenant-r0",
+    "name": "Lieutenant (R0)",
+    "attributes": {
+      "body": 3,
+      "agility": 4,
+      "reaction": 3,
+      "strength": 4,
+      "willpower": 3,
+      "logic": 2,
+      "intuition": 3,
+      "charisma": 2,
+      "essence": 6,
+      "movement": 6
+    },
+    "skills": {
+      "active": {
+        "blades": { "rating": 3, "attribute": "agility" },
+        "clubs": { "rating": 4, "attribute": "agility" },
+        "intimidation": { "rating": 5, "attribute": "agility" },
+        "unarmed combat": { "rating": 4, "attribute": "agility" }
+      },
+      "knowledge": {
+        "organization-specific street knowledge": { "rating": 3, "attribute": "intuition" }
+      }
+    },
+    "gear": {
+      "weapons": {
+        "club": { "skill": "clubs", "accuracy": 4, "reach": 1, "damage": 6, "damageType": "P", "armorPiercing": 0 },
+        "colt america L36": { "skill": "pistols", "specialization": "light pistols", "accuracy": 7, "damage": 7, "damageType": "P", "armorPiercing": 0, "modes": ["semiAuto"], "recoilCompensation": 0, "ammo": "30", "ammoType": "clip" },
+        "knife": { "skill": "blades", "accuracy": 5, "reach": 0, "damage": 4, "damageType": "P", "armorPiercing": -1 }
+      },
+      "matrix": {
+        "meta link commlink": { "rating": 1 }
+      }
+    }
+  }, {
+    "id": "grunt-r1",
+    "name": "Grunt (R1)",
+    "attributes": {
+      "body": 4,
+      "agility": 4,
+      "reaction": 3,
+      "strength": 4,
+      "willpower": 3,
+      "logic": 2,
+      "intuition": 3,
+      "charisma": 3,
+      "essence": 6,
+      "movement": 6
+    },
+    "skills": {
+      "active": {
+        "blades": { "rating": 4, "attribute": "agility" },
+        "clubs": { "rating": 3, "attribute": "agility" },
+        "intimidation": { "rating": 5, "attribute": "agility" },
+        "unarmed combat": { "rating": 4, "attribute": "agility" }
+      },
+      "knowledge": {
+        "organization-specific street knowledge": { "rating": 3, "attribute": "intuition" }
+      }
+    },
+    "gear": {
+      "weapons": {
+        "club": { "skill": "clubs", "accuracy": 4, "reach": 1, "damage": 6, "damageType": "P", "armorPiercing": 0 },
+        "colt america L36": { "skill": "pistols", "specialization": "light pistols", "accuracy": 7, "damage": 7, "damageType": "P", "armorPiercing": 0, "modes": ["semiAuto"], "recoilCompensation": 0, "ammo": "30", "ammoType": "clip" },
+        "knife": { "skill": "blades", "accuracy": 5, "reach": 0, "damage": 4, "damageType": "P", "armorPiercing": -1 }
+      },
+      "matrix": {
+        "meta link commlink": { "rating": 1 }
+      }
+    }
+  }
+]

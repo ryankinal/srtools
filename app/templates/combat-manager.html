@@ -1,0 +1,122 @@
+<div id="combatManager">
+  <h2 class="page-header">Combat</h2>
+  <section class="stuff-list participants">
+    <header class="clearfix">
+      <h3 class="kind-of-stuff">Participants</h3>
+      <div class="controls">
+        <button class="add-participant" show="#character-selector, .modal-blanket">
+          <span class="fa fa-plus"></span>
+        </button>
+        <button class="expand" showhide="#alphabeticalParticipants">
+          <span class="fa fa-caret-down"></span>
+        </button>
+      </div>
+    </header>
+    <div id="alphabeticalParticipants">
+      {{#participants.alphabetical}}
+        <div class="character character-minimal clearfix" participant-id="{{id}}">
+          <div class="participant-name">
+            {{name}}
+          </div>
+          <div class="controls">
+            <input type="text" initiative value="{{initiative}}" length="2">
+            <button roll class="icon-button"><span class="fas fa-dice"></span></button>
+            <button alive class="participant-active icon-button">
+              {{#alive}}<span class="fa fa-heart"></span>{{/alive}}
+              {{^alive}}<span class="fa fa-skull"></span>{{/alive}}
+            </button>
+            <button details class="icon-button"><span class="fa fa-file"></span></button>
+          </div>
+        </div>
+      {{/participants.alphabetical}}
+      {{^participants.alphabetical}}
+        <p>No participants</p>
+      {{/participants.alphabetical}}
+    </div>
+    {{^roundStarted}}
+      <div class="round-tools">
+        <button start-round>Start Round {{round}}</button>
+      </div>
+    {{/roundStarted}}
+  </section>
+  {{#roundStarted}}
+    <section class="stuff-list initiativeOrder">
+      <header class="clearfix">
+        <h3 class="kind-of-stuff">Round: {{round}}</h3>
+        <div class="controls">
+          Pass: {{pass}}
+        </div>
+      </header>
+      <div id="initiativeParticipants" index="{{currentParticipant}}">
+        <div cards class="cards">
+          {{#participants.initiative}}
+            <div class="character character-combat card {{#current}}current{{/current}} {{#passed}}passed{{/passed}} {{^alive}}dead{{/alive}}" participant-id="{{id}}">
+              <div class="participant-initiative">
+                <div>Initiative</div>
+                <div class="initiative-value">{{initiative}}</div>
+              </div>
+              <div class="participant-name">
+                {{#current}}<div class="acting">Acting</div>{{/current}}
+                <div>{{name}}</div>
+                {{#current}}<div><button next>Done</button></div>{{/current}}
+              </div>
+              <div class="controls">
+                <button alive class="participant-active icon-button">
+                  {{#alive}}<span class="fa fa-heart"></span>{{/alive}}
+                  {{^alive}}<span class="fa fa-skull"></span>{{/alive}}
+                </button>
+                <button details class="icon-button"><span class="fa fa-file"></span></button>
+              </div>
+            </div>
+          {{/participants.initiative}}
+          {{^participants.initiative}}
+            <p>No participants</p>
+          {{/participants.initiative}}
+        </div>
+      </div>
+    </section>
+  {{/roundStarted}}
+</div>
+
+<div id="character-selector" class="modal with-sticky-footer hide">
+  <div class="characters player-characters stuff-list">
+    <header>
+      <h2>Runners</h2>
+    </header>
+    <div>
+      {{#characters}}
+        <div class="character character-minimal" character-id="{{id}}">
+          <div class="selected-check"><span class="fas fa-check"></span></div>
+          <div class="character-name">{{name}}</div>
+        </div>
+      {{/characters}}
+      {{^characters}}
+        <div class="no-characters">No Runners Available</div>
+      {{/characters}}
+    </div>
+  </div>
+  <div class="characters grunts stuff-list">
+    <header>
+      <h2>Grunts</h2>
+    </header>
+    <div>
+      {{#grunts}}
+        <div class="character character-minimal" character-id="{{id}}">
+          <div class="selected-check"><span class="fas fa-check"></span></div>
+          <div class="character-name">{{name}}</div>
+          <div class="controls">
+            <input type="number" name="howMany" min="1" max="10" value="1">
+          </div>
+        </div>
+      {{/grunts}}
+      {{^grunts}}
+        <div class="no-characters">No Grunts Available</div>
+      {{/grunts}}
+    </div>
+  </div>
+  <div class="modal-footer sticky-modal-footer">
+    <button submit hide="#character-selector, .modal-blanket"><span class="fas fa-plus"> Add Selected</span></button>
+  </div>
+</div>
+
+<div id="character-details"></div>

@@ -1,0 +1,70 @@
+<div id="characterManager">
+  <h2 class="page-header">Characters</h2>
+  <section class="stuff-list characters">
+    <header>
+      <div class="filter search-filter">
+        <input type="text" class="search" placeholder="Filter">
+        <div class="filter-icon"><span class="fas fa-search"></span></div>
+      </div>
+    </header>
+    <div>
+      {{#characters}}
+        <div class="character character-minimal clearfix" character-id="{{id}}">
+          <div class="character-name">{{name}}</div>
+          <div class="controls">
+            <button delete class="remove-button icon-button"><span class="fas fa-trash-alt"></span></button>
+          </div>
+        </div>
+      {{/characters}}
+      {{^characters}}
+        <p>No characters</p>
+      {{/characters}}
+    </div>
+  </section>
+
+  <section class="form character-form">
+    <header>
+      <h2>Create</h2>
+    </header>
+    <div>
+      <input type="text" class="input input-character-name" placeholder="Name">
+      <div class="character-attributes">
+        <div class="character-attribute character-attribute-body">
+          <label>Bod</label>
+          <input type="text" attribute="body">
+        </div>
+        <div class="character-attribute character-attribute-agility">
+          <label>Agi</label>
+          <input type="text" attribute="agility">
+        </div>
+        <div class="character-attribute character-attribute-reaction">
+          <label>Rea</label>
+          <input type="text" attribute="reaction">
+        </div>
+        <div class="character-attribute character-attribute-strength">
+          <label>Str</label>
+          <input type="text" attribute="strength">
+        </div>
+        <div class="character-attribute character-attribute-willpower">
+          <label>Wil</label>
+          <input type="text" attribute="willpower">
+        </div>
+        <div class="character-attribute character-attribute-logic">
+          <label>Log</label>
+          <input type="text" attribute="logic">
+        </div>
+        <div class="character-attribute character-attribute-intuition">
+          <label>Int</label>
+          <input type="text" attribute="intuition">
+        </div>
+        <div class="character-attribute character-attribute-charisma">
+          <label>Cha</label>
+          <input type="text" attribute="charisma">
+        </div>
+      </div>
+      <div>
+        <button save class="save-character">Save</button>
+      </div>
+    </div>
+  </section>
+</div>
