@@ -4,7 +4,7 @@ import { CharacterController } from './controllers/character-controller.js';
 import { ShowHide } from './interface-plugins/showhide/showhide.js';
 
 (function() {
-  let root = window.location;
+  let root = window.location.pathname;
 
   let addNavHandlers = function(container) {
     container.querySelectorAll('[location]').forEach(function(link) {
