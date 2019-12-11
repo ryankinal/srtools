@@ -1,9 +1,9 @@
-import { Controller } from './controller';
-import { Combat } from '../model/combat';
-import { ShowHide } from '../interface-plugins/showhide/showhide';
-import { CardCarousel } from '../interface-plugins/card-carousel/card-carousel';
-import { CharacterRepository } from '../data-access/character-repository';
-import { Dice } from '../utilities/dice';
+import { Controller } from './controller.js';
+import { Combat } from '../model/combat.js';
+import { ShowHide } from '../interface-plugins/showhide/showhide.js';
+import { CardCarousel } from '../interface-plugins/card-carousel/card-carousel.js';
+import { CharacterRepository } from '../data-access/character-repository.js';
+import { Dice } from '../utilities/dice.js';
 
 export class CombatController extends Controller {
   templateFile = 'combat-manager';

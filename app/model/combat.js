@@ -1,5 +1,5 @@
-import { CombatParticipant } from './combat-participant';
-import { Events } from '../events';
+import { CombatParticipant } from './combat-participant.js';
+import { Events } from '../events.js';
 
 export class Combat {
   participants = [];

@@ -1,6 +1,6 @@
-import { Repository } from './repository';
-import { HTTP } from '../http';
-import { Character } from '../model/character';
+import { Repository } from './repository.js';
+import { HTTP } from '../http.js';
+import { Character } from '../model/character.js';
 
 export class CharacterRepository extends Repository {
   getAll() {

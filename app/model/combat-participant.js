@@ -1,5 +1,5 @@
-import { Character } from './character';
-import { Repository } from '../data-access/repository';
+import { Character } from './character.js';
+import { Repository } from '../data-access/repository.js';
 
 export class CombatParticipant {
   id = '';

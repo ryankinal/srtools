@@ -1,7 +1,7 @@
-import { Router } from './router';
-import { CombatController } from './controllers/combat-controller';
-import { CharacterController } from './controllers/character-controller';
-import { ShowHide } from './interface-plugins/showhide/showhide';
+import { Router } from './router.js';
+import { CombatController } from './controllers/combat-controller.js';
+import { CharacterController } from './controllers/character-controller.js';
+import { ShowHide } from './interface-plugins/showhide/showhide.js';
 
 (function() {
   let addNavHandlers = function(container) {

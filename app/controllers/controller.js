@@ -1,6 +1,6 @@
-import { Renderer } from '../renderer';
-import { HTTP } from '../http';
-import { Events } from '../events';
+import { Renderer } from '../renderer.js';
+import { HTTP } from '../http.js';
+import { Events } from '../events.js';
 
 export class Controller {
   template = 'Default controller';

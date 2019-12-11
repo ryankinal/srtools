@@ -1,5 +1,5 @@
-import { Controller } from './controllers/controller';
-import { Events } from './events';
+import { Controller } from './controllers/controller.js';
+import { Events } from './events.js';
 
 export class Router {
   root = '/';

@@ -1,8 +1,8 @@
-import { Controller } from '../controllers/controller';
-import { CharacterRepository } from '../data-access/character-repository';
-import { ShowHide } from '../interface-plugins/showhide/showhide';
-import { Character } from '../model/character';
-import { CAP } from '../utilities/cap';
+import { Controller } from '../controllers/controller.js';
+import { CharacterRepository } from '../data-access/character-repository.js';
+import { ShowHide } from '../interface-plugins/showhide/showhide.js';
+import { Character } from '../model/character.js';
+import { CAP } from '../utilities/cap.js';
 
 export class CharacterController extends Controller {
   templateFile = 'character-manager';
