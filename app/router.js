@@ -64,7 +64,7 @@ export class Router {
         let controller = null;
 
         if (definition.controller) {
-          controller = new (definition.controller)();
+          controller = new (definition.controller)(root + 'app/templates/');
         } else if (definition.templateFile) {
           controller = new Controller();
           controller.templateFile = definition.templateFile;

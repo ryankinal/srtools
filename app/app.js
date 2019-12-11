@@ -4,6 +4,8 @@ import { CharacterController } from './controllers/character-controller.js';
 import { ShowHide } from './interface-plugins/showhide/showhide.js';
 
 (function() {
+  let root = window.location;
+
   let addNavHandlers = function(container) {
     container.querySelectorAll('[location]').forEach(function(link) {
       let location = link.getAttribute('location');
@@ -17,7 +19,7 @@ import { ShowHide } from './interface-plugins/showhide/showhide.js';
 
   let currentController = null;
 
-  let router = new Router();
+  let router = new Router(root, 'SR Tools', CharacterController);
   router.addRoute('/combat', 'Combat Manager', CombatController);
   router.addRoute('/characters', 'Characters', CharacterController);
 
