@@ -11,8 +11,8 @@ export class CharacterController extends Controller {
   characterRepo = null;
   data = {};
 
-  constructor() {
-    super();
+  constructor(templateRoot) {
+    super(templateRoot);
 
     let self = this;
     this.characterRepo = new CharacterRepository();

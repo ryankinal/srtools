@@ -14,8 +14,8 @@ export class CombatController extends Controller {
   grunts = null;
   charactersById = {};
 
-  constructor() {
-    super();
+  constructor(templateRoot) {
+    super(templateRoot);
 
     let self = this;
     let characterRepo = new CharacterRepository();
